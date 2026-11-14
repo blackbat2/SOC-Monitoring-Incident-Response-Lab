@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Illustrative agent config EXTRACT, not the full installed ossec.conf.
+     Merge the localfile block and directories line into the existing
+     ossec_config and syscheck sections on your own Windows lab endpoint.
+     Do not replace the original agent config with this minimal snippet. -->
+<ossec_config>
+  <!-- Sysmon event collection -->
+  <localfile>
+    <location>Microsoft-Windows-Sysmon/Operational</location>
+    <log_format>eventchannel</log_format>
+  </localfile>
+  <!-- Realtime FIM configuration as used in this lab -->
+  <syscheck>
+    <directories check_all="yes" realtime="yes">C:\SOC-Lab\Monitored</directories>
+  </syscheck>
+</ossec_config>

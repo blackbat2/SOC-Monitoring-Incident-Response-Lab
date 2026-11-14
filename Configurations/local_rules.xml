@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Custom Wazuh rule validated in the personal SOC lab.
+     Merge this group into /var/ossec/etc/rules/local_rules.xml as a TOP-LEVEL group.
+     This rule is a benign validation test and should be adapted before production use. -->
+<group name="soc_lab,sysmon,">
+  <rule id="100101" level="5">
+    <if_sid>61603</if_sid>
+    <field name="win.eventdata.image" type="pcre2">(?i)notepad\.exe$</field>
+    <description>SOC Lab: Notepad process execution detected</description>
+  </rule>
+</group>
